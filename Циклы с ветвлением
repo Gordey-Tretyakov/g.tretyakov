@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    
+    float C[4] = {0.03,0.03,0.3,0.3};
+    float L[4] = {0.6,6,0.6,6};
+    float R[4] = {5000,10000,5000,10000};
+    float E = 12, t = 0.001, i, b, a, B;
+    for(int j = 0; j < 4; ++j) 
+  {
+     b = R[j] / (2 * L[j]);
+     a = (pow(10,3) * E * pow(M_E, (-b * t))) / L[j];
+     B = (pow(10,6) / (L[j] * C[j])) - pow(b,2);
+  	if(B > 0)  
+      {
+        i = a * sin(sqrt(B) * t) / sqrt(B);
+          printf(" B = %10.3f    i = %10.3f  \n",B,i);
+      }
+      
+    if(B < 0)
+    {
+        i = a * sinh(sqrt(-B) * t) / sqrt(-B);
+        printf(" B = %10.3f    i = %10.3f  \n",B,i);
+    }
+  }
+  
+  return 0;
+}
