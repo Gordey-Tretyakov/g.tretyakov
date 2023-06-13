@@ -1,0 +1,29 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main() {
+    int e, l;
+    double e0, R, C, r;
+    R = 4.7;
+    e0 = 8.85 * pow(10,-2);
+    e = 6;
+    l = 13;
+    r = 4.5;
+        while (R < 4.9) {
+            C = (2 * M_PI * e * e0 * l) / (log(R/r));
+        cout << R << "\t" << C << endl;
+        R += 0.1;
+        if (r == 5) {
+            break;
+        }
+    }
+    do {
+        C = (2 * M_PI * e * e0 * l) / (log(R/r));
+        cout << R << "\t" << C << endl;
+        R += 1;
+    } while (R <= 10);
+    
+    
+}
