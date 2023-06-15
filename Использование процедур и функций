@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   setlocale(LC_ALL, "Russian");
+   int n, m;
+   cout << "Введите размер массива S: ";
+   cin >> n;
+   int S[n];
+   cout << "Введите элементы массива S: ";
+   int neg_count_S = 0;
+   for (int i = 0; i < n; i++) {
+       cin >> S[i];
+       if (S[i] < 0) {
+           neg_count_S++;
+       }
+   }
+   cout << "Количество отрицательных элементов массива S =  " << neg_count_S << endl;
+
+   cout << "Введите размер массива W: ";
+   cin >> m;
+   int W[m];
+   cout << "Введите элементы массива W: ";
+   int neg_count_W = 0;
+   for (int i = 0; i < m; i++) {
+       cin >> W[i];
+       if (W[i] < 0) {
+           neg_count_W++;
+       }
+   }
+   cout << "Количество отрицательных элементов массива W = " << neg_count_W << endl;
+
+   return 0;
+}
